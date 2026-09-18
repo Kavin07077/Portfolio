@@ -50,18 +50,6 @@
         <span>KAVIN N</span>
       </a>
 
-      <!-- Mobile Hamburger Toggle -->
-      <button
-        class="nav-toggle"
-        id="navToggle"
-        aria-label="Toggle navigation menu"
-        aria-expanded="false"
-        aria-controls="siteNav"
-      >
-        <span></span>
-        <span></span>
-      </button>
-
       <!-- Navigation Links -->
       <nav class="site-nav" id="siteNav">
         <a href="#about">About</a>
@@ -71,18 +59,37 @@
         <a href="#projects">Projects</a>
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
+        <div class="mobile-nav-actions">
+          <button class="btn btn-primary btn-sm mobile-resume-btn" id="mobileResumeBtn">
+            <span>View Resume</span>
+          </button>
+        </div>
       </nav>
 
       <!-- Header Actions -->
       <div class="header-actions">
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark and light mode">
-          <span>Theme</span>
+          <span class="theme-icon" aria-hidden="true">🌓</span>
+          <span class="theme-text">Theme</span>
         </button>
-        <button class="btn btn-secondary btn-sm" id="openResumeModal">
+        <button class="btn btn-secondary btn-sm header-resume-btn" id="openResumeModal">
           <span>Resume</span>
+        </button>
+        <!-- Mobile Hamburger Toggle -->
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="siteNav"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
       </div>
     </header>
+    <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
 
     <main>
       <!-- ==========================================================================
@@ -607,7 +614,7 @@
           </p>
         </div>
 
-        <div style="display: flex; gap: 12px; margin-top: 1.5rem; border-top: 1px solid var(--border); padding-top: 1.2rem;">
+        <div class="modal-actions">
           <button class="btn btn-primary" onclick="window.print()">Print / Save as PDF</button>
           <button class="btn btn-secondary" id="dismissResumeModal">Close</button>
         </div>

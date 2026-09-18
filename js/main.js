@@ -14,6 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const cursorRing = document.getElementById("cursorRing");
   const navToggle = document.getElementById("navToggle");
   const siteNav = document.getElementById("siteNav");
+  const navBackdrop = document.getElementById("navBackdrop");
+  const mobileResumeBtn = document.getElementById("mobileResumeBtn");
   const typingName = document.getElementById("typingName");
   const revealEls = document.querySelectorAll(".reveal");
   const parallaxEls = document.querySelectorAll(".parallax");
@@ -123,13 +125,20 @@ document.addEventListener("DOMContentLoaded", () => {
   startTypewriter();
 
   /* ==========================================================================
-     5. MOBILE NAVIGATION TOGGLE
+     5. MOBILE NAVIGATION TOGGLE & BACKDROP
      ========================================================================== */
   const setNavState = (isOpen) => {
     if (!navToggle || !siteNav) return;
     navToggle.classList.toggle("active", isOpen);
     navToggle.setAttribute("aria-expanded", String(isOpen));
     siteNav.classList.toggle("open", isOpen);
+    if (navBackdrop) {
+      navBackdrop.classList.toggle("active", isOpen);
+    }
+    // Prevent body scroll only when mobile drawer is open
+    if (window.innerWidth <= 992) {
+      document.body.style.overflow = isOpen ? "hidden" : "";
+    }
   };
 
   if (navToggle && siteNav) {
@@ -142,14 +151,24 @@ document.addEventListener("DOMContentLoaded", () => {
       link.addEventListener("click", () => setNavState(false));
     });
 
+    if (navBackdrop) {
+      navBackdrop.addEventListener("click", () => setNavState(false));
+    }
+
     document.addEventListener("click", (e) => {
       if (!siteNav.classList.contains("open")) return;
-      if (siteNav.contains(e.target) || navToggle.contains(e.target)) return;
+      if (siteNav.contains(e.target) || navToggle.contains(e.target) || (navBackdrop && navBackdrop.contains(e.target))) return;
       setNavState(false);
     });
 
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") setNavState(false);
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 992 && siteNav.classList.contains("open")) {
+        setNavState(false);
+      }
     });
   }
 
@@ -263,41 +282,42 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ==========================================================================
-     9. 3D CARD TILT EFFECT
+     9. 3D CARD TILT & 10. MAGNETIC BUTTON EFFECTS (Desktop / Pointer Only)
      ========================================================================== */
-  tiltCards.forEach((card) => {
-    card.addEventListener("mousemove", (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const midX = rect.width / 2;
-      const midY = rect.height / 2;
-      const rotateY = ((x - midX) / midX) * 7;
-      const rotateX = -((y - midY) / midY) * 7;
+  const isHoverCapable = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
-      card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  if (isHoverCapable) {
+    tiltCards.forEach((card) => {
+      card.addEventListener("mousemove", (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const midX = rect.width / 2;
+        const midY = rect.height / 2;
+        const rotateY = ((x - midX) / midX) * 7;
+        const rotateX = -((y - midY) / midY) * 7;
+
+        card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      });
+
+      card.addEventListener("mouseleave", () => {
+        card.style.transform = "perspective(900px) rotateX(0) rotateY(0)";
+      });
     });
 
-    card.addEventListener("mouseleave", () => {
-      card.style.transform = "perspective(900px) rotateX(0) rotateY(0)";
-    });
-  });
+    magnetics.forEach((button) => {
+      button.addEventListener("mousemove", (e) => {
+        const rect = button.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        button.style.transform = `translate(${x * 0.15}px, ${y * 0.2}px)`;
+      });
 
-  /* ==========================================================================
-     10. MAGNETIC BUTTON EFFECT
-     ========================================================================== */
-  magnetics.forEach((button) => {
-    button.addEventListener("mousemove", (e) => {
-      const rect = button.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-      button.style.transform = `translate(${x * 0.15}px, ${y * 0.2}px)`;
+      button.addEventListener("mouseleave", () => {
+        button.style.transform = "translate(0, 0)";
+      });
     });
-
-    button.addEventListener("mouseleave", () => {
-      button.style.transform = "translate(0, 0)";
-    });
-  });
+  }
 
   /* ==========================================================================
      11. PARALLAX EFFECT
@@ -371,6 +391,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (openResumeModal) openResumeModal.addEventListener("click", openResume);
   if (heroResumeBtn) heroResumeBtn.addEventListener("click", openResume);
+  if (mobileResumeBtn) {
+    mobileResumeBtn.addEventListener("click", () => {
+      setNavState(false);
+      openResume();
+    });
+  }
   if (closeResumeModal) closeResumeModal.addEventListener("click", closeResume);
   if (dismissResumeModal) dismissResumeModal.addEventListener("click", closeResume);
 

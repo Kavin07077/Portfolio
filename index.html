@@ -1,676 +1,711 @@
 <!doctype html>
 <html lang="en" data-theme="dark">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KAVIN N | Software Developer & Tech Community Enthusiast</title>
-    <meta
-      name="description"
-      content="Futuristic personal portfolio of KAVIN N, Aspiring Software Developer, B.Tech IT undergraduate, and Tech Community Organizer."
-    />
-    <meta name="keywords" content="Kavin N, Software Developer, Python, C++, Java, B.Tech IT, MKCE Karur, Dindigul, Portfolio" />
-    <meta name="author" content="Kavin N" />
 
-    <!-- Google Fonts: Orbitron (Headings) & Manrope (Body) & JetBrains Mono -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Orbitron:wght@500;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KAVIN N | Software Developer & Tech Community Enthusiast</title>
+  <meta name="description"
+    content="Futuristic personal portfolio of KAVIN N, Aspiring Software Developer, B.Tech IT undergraduate, and Tech Community Organizer." />
+  <meta name="keywords"
+    content="Kavin N, Software Developer, Python, C++, Java, B.Tech IT, MKCE Karur, Dindigul, Portfolio" />
+  <meta name="author" content="Kavin N" />
 
-    <!-- Favicon SVG -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%239d7bff'/><text x='50%' y='68%' font-size='56' font-family='sans-serif' font-weight='800' fill='white' text-anchor='middle'>K</text></svg>">
+  <!-- Google Fonts: Orbitron (Headings) & Manrope (Body) & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Orbitron:wght@500;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
+    rel="stylesheet" />
 
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <!-- Ambient Loading Screen -->
-    <div class="loader" id="loader" aria-hidden="true">
-      <div class="loader-ring"></div>
-      <p>Loading Kavin N Experience</p>
-    </div>
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%239d7bff'/><text x='50%' y='68%' font-size='56' font-family='sans-serif' font-weight='800' fill='white' text-anchor='middle'>K</text></svg>">
 
-    <!-- Futuristic Custom Interactive Cursor -->
-    <div class="cursor-dot" id="cursorDot"></div>
-    <div class="cursor-ring" id="cursorRing"></div>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
 
-    <!-- Scroll Progress Indicator -->
-    <div class="scroll-progress" id="scrollProgress"></div>
+<body>
+  <!-- Ambient Loading Screen -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-ring"></div>
+    <p>Loading Kavin N Experience</p>
+  </div>
 
-    <!-- Interactive Floating Particle Canvas -->
-    <canvas id="particleCanvas" aria-hidden="true"></canvas>
+  <!-- Futuristic Custom Interactive Cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
 
-    <!-- ==========================================================================
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Interactive Floating Particle Canvas -->
+  <canvas id="particleCanvas" aria-hidden="true"></canvas>
+
+  <!-- ==========================================================================
          SITE HEADER / NAVBAR (Floating Glass Capsule)
          ========================================================================== -->
-    <header class="site-header glass">
+  <header class="site-header glass">
+    <a href="#hero" class="logo">
+      <span class="logo-badge">K</span>
+      <span>KAVIN N</span>
+    </a>
+
+    <!-- Navigation Links -->
+    <nav class="site-nav" id="siteNav">
+      <a href="#about">About</a>
+      <a href="#stats">Stats</a>
+      <a href="#skills">Skills</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+      <div class="mobile-nav-actions">
+        <button class="btn btn-primary btn-sm mobile-resume-btn" id="mobileResumeBtn">
+          <span>View Resume</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark and light mode">
+        <span class="theme-icon" aria-hidden="true">🌓</span>
+        <span class="theme-text">Theme</span>
+      </button>
+      <button class="btn btn-secondary btn-sm header-resume-btn" id="openResumeModal">
+        <span>Resume</span>
+      </button>
+      <!-- Mobile Hamburger Toggle -->
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false"
+        aria-controls="siteNav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+  <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+
+  <main>
+    <!-- ==========================================================================
+           HERO SECTION
+           ========================================================================== -->
+    <section class="hero section" id="hero">
+      <div class="hero-grid"></div>
+      <div class="hero-content reveal">
+        <p class="eyebrow">Aspiring Software Developer • Tech Community Enthusiast • B.Tech IT</p>
+        <h1 class="typing-name" id="typingName" data-text="KAVIN N" aria-label="KAVIN N"></h1>
+        <p class="subheading">
+          Aspiring to foster a collaborative tech community by organizing events that promote innovation and learning.
+          Eager to empower peers while growing as a leader through real-world problem solving and Google technologies.
+        </p>
+        <div class="cta-group">
+          <a href="#projects" class="btn btn-primary magnetic">View Projects</a>
+          <a href="#contact" class="btn btn-secondary magnetic">Get In Touch</a>
+          <button class="btn btn-secondary magnetic" id="heroResumeBtn">View Resume</button>
+          <a href="https://www.linkedin.com/in/kavin-kavin" target="_blank" rel="noreferrer"
+            class="btn btn-linkedin magnetic">View LinkedIn Profile</a>
+        </div>
+      </div>
+
+      <!-- Hero Visual: Floating Orbs + 3D Tilt Avatar Card -->
+      <div class="hero-visual parallax" data-speed="0.08">
+        <div class="orb orb-one"></div>
+        <div class="orb orb-two"></div>
+        <div class="avatar-card tilt-card glass">
+          <div class="avatar-glow"></div>
+          <div class="avatar-core">
+            <img src="assets/images/avatar.jpg" alt="Portrait of KAVIN N" class="hero-portrait" />
+          </div>
+          <p>Futuristic Developer & Tech Explorer</p>
+          <div class="hero-caption">
+            <h3>KAVIN N</h3>
+            <p>Software Developing • Tech Community</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+           ABOUT SECTION
+           ========================================================================== -->
+    <section class="about section" id="about">
+      <div class="section-title reveal">
+        <p class="eyebrow">About</p>
+        <h2>Building Meaningful Digital Solutions</h2>
+      </div>
+
+      <div class="about-layout">
+        <!-- Profile Visual & Tags -->
+        <article class="about-card glass reveal">
+          <div class="profile-wrap">
+            <div class="profile-frame">
+              <img src="assets/images/avatar.jpg" alt="Portrait of Kavin N" />
+            </div>
+            <div class="profile-info">
+              <div class="profile-tags">
+                <span>B.Tech IT (2024–2028)</span>
+                <span>Java & Swing</span>
+                <span>JavaScript & Node.js</span>
+                <span>DBMS & SQL</span>
+                <span>Python</span>
+                <span>C / C++</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Narrative & Journey Timeline -->
+        <article class="timeline glass reveal">
+          <h3>Hi, I am KAVIN N.</h3>
+          <p class="project-desc">
+            I am a passionate Information Technology undergraduate at M. Kumarasamy College of Engineering, Karur. My
+            core drive is software development, solving analytical problems, and researching modern technology
+            ecosystems.
+          </p>
+          <p class="project-desc">
+            I actively work to empower peers and build collaborative technical environments by organizing interactive
+            learning events and exploring Google technologies.
+          </p>
+
+          <h3 style="margin-top: 1.6rem;">Journey Milestones</h3>
+          <ul>
+            <li>
+              <span class="num">01</span>
+              <div>
+                <strong>Secondary School Leaving Certificate (SSLC) — 85.2%</strong>
+                <p style="color: var(--muted); font-size: 0.88rem;">Akshaya Academy Matric Higher Secondary School
+                  (2022)</p>
+              </div>
+            </li>
+            <li>
+              <span class="num">02</span>
+              <div>
+                <strong>Higher Secondary Certificate (HSC) — 83.5%</strong>
+                <p style="color: var(--muted); font-size: 0.88rem;">Akshaya Academy Matric Higher Secondary School
+                  (2024)</p>
+              </div>
+            </li>
+            <li>
+              <span class="num">03</span>
+              <div>
+                <strong>B.Tech Information Technology — 7.85 CGPA</strong>
+                <p style="color: var(--muted); font-size: 0.88rem;">M. Kumarasamy College of Engineering, Karur
+                  (2024–2028, upto 2nd Sem)</p>
+              </div>
+            </li>
+            <li>
+              <span class="num">04</span>
+              <div>
+                <strong>Mission & Vision</strong>
+                <p style="color: var(--muted); font-size: 0.88rem;">Empowering a collaborative tech community through
+                  Google technologies and real-world problem solving.</p>
+              </div>
+            </li>
+          </ul>
+
+          <!-- Personal Meta Grid -->
+          <div class="personal-meta-grid">
+            <div class="personal-meta-item">
+              <span class="meta-label">Location</span>
+              <span class="meta-value">Dindigul - 624614, Tamil Nadu</span>
+            </div>
+            <div class="personal-meta-item">
+              <span class="meta-label">Languages Known</span>
+              <span class="meta-value">Tamil & English (Read, Write, Speak)</span>
+            </div>
+            <div class="personal-meta-item">
+              <span class="meta-label">Areas of Interest</span>
+              <span class="meta-value">Software Developing, Technology Research</span>
+            </div>
+            <div class="personal-meta-item">
+              <span class="meta-label">Hobbies</span>
+              <span class="meta-value">Exploring new places, Reading books & stories</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+           STATS SECTION
+           ========================================================================== -->
+    <section class="section" id="stats">
+      <div class="section-title reveal">
+        <p class="eyebrow">Academic Stats</p>
+        <h2>Numbers & Milestones</h2>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card glass reveal">
+          <h3 class="count-val" data-target="7.85" data-is-decimal="true">7.85</h3>
+          <p>B.Tech IT CGPA (upto 2nd Sem)</p>
+        </div>
+        <div class="stat-card glass reveal">
+          <h3 class="count-val" data-target="84">84%</h3>
+          <p>Average Board Exam Score</p>
+        </div>
+        <div class="stat-card glass reveal">
+          <h3 class="count-val" data-target="3">3+</h3>
+          <p>Core Academic Systems Built</p>
+        </div>
+        <div class="stat-card glass reveal">
+          <h3 class="count-val" data-target="2028">2028</h3>
+          <p>Graduation Year (MKCE Karur)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+           SKILLS SECTION
+           ========================================================================== -->
+    <section class="section" id="skills">
+      <div class="section-title reveal">
+        <p class="eyebrow">Technical Competencies</p>
+        <h2>Skills & Technologies</h2>
+      </div>
+
+      <div class="skills-grid">
+        <!-- Card 1: Programming & Technologies -->
+        <div class="skill-card glass reveal">
+          <h3>
+            <span class="skill-icon">⚡</span>
+            <span>Languages & Frameworks</span>
+          </h3>
+          <div class="skill-badges">
+            <span class="skill-tag">Java (Swing)</span>
+            <span class="skill-tag">JavaScript (ES6+)</span>
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">C / C++</span>
+            <span class="skill-tag">Logic Building</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Databases & Concepts -->
+        <div class="skill-card glass reveal">
+          <h3>
+            <span class="skill-icon">💾</span>
+            <span>Databases & Architecture</span>
+          </h3>
+          <div class="skill-badges">
+            <span class="skill-tag">DBMS (Relational)</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">SQLite</span>
+            <span class="skill-tag">Schema Design</span>
+            <span class="skill-tag">OOP Architecture</span>
+            <span class="skill-tag">RESTful APIs</span>
+          </div>
+        </div>
+
+        <!-- Card 3: Soft Skills & Leadership -->
+        <div class="skill-card glass reveal">
+          <h3>
+            <span class="skill-icon">🚀</span>
+            <span>Leadership & Soft Skills</span>
+          </h3>
+          <div class="skill-badges">
+            <span class="skill-tag">Community Organizing</span>
+            <span class="skill-tag">Google Technologies</span>
+            <span class="skill-tag">Communication Skills</span>
+            <span class="skill-tag">Teamwork & Collaboration</span>
+            <span class="skill-tag">Technology Research</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+           SERVICES / COMPETENCIES
+           ========================================================================== -->
+    <section class="section" id="services">
+      <div class="section-title reveal">
+        <p class="eyebrow">What I Do</p>
+        <h2>Core Focus Areas</h2>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card glass reveal">
+          <h3>Software Developing</h3>
+          <p>Building clean, modular, and functional applications in Python, C++, and Java with focus on logic and
+            system architecture.</p>
+        </div>
+        <div class="service-card glass reveal">
+          <h3>Database & Data Management</h3>
+          <p>Designing structured relational database schemas and reliable file handling systems using SQLite and MySQL.
+          </p>
+        </div>
+        <div class="service-card glass reveal">
+          <h3>Tech Community Organizing</h3>
+          <p>Empowering student peers through coding workshops, technical hackathons, and Google developer technology
+            sessions.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+           PROJECTS SECTION
+           ========================================================================== -->
+    <section class="section" id="projects">
+      <div class="section-title reveal">
+        <p class="eyebrow">Featured Work</p>
+        <h2>Academic Projects</h2>
+      </div>
+
+      <!-- Filter bar -->
+      <div class="projects-filter-bar reveal">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="java">Java & Swing</button>
+        <button class="filter-btn" data-filter="web">JavaScript & Node.js</button>
+        <button class="filter-btn" data-filter="dbms">DBMS Project</button>
+      </div>
+
+      <div class="showcase-grid">
+        <!-- Project 1: Train Ticket Reservation System -->
+        <article class="project-item glass reveal" data-category="java">
+          <div class="project-img-box">
+            <img src="assets/images/project_train.jpg" alt="Train Ticket Reservation System UI" class="project-img"
+              loading="lazy" />
+          </div>
+          <h3>Train Ticket Reservation System</h3>
+          <p class="project-desc">
+            Engineered a comprehensive desktop Train Ticket Reservation System in Java utilizing Java Swing for an
+            interactive graphical user interface. Designed modular backend architecture featuring railway route lookups,
+            dynamic coach & seat matrix allocation, automated PNR generation, ticket booking, cancellation workflows,
+            and fare calculations with persistent record management.
+          </p>
+          <div class="project-pills">
+            <span class="project-pill">Java</span>
+            <span class="project-pill">Java Swing GUI</span>
+            <span class="project-pill">OOP Architecture</span>
+            <span class="project-pill">PNR & Ticketing Logic</span>
+            <span class="project-pill">Database Persistence</span>
+          </div>
+          <div class="project-actions">
+            <a href="#contact" class="btn btn-primary btn-sm">Inquire / Demo</a>
+            <a href="https://github.com/Kavin07077" target="_blank" rel="noreferrer"
+              class="btn btn-secondary btn-sm">GitHub</a>
+          </div>
+        </article>
+
+        <!-- Project 2: GeoTag Issue Reporter System -->
+        <article class="project-item glass reveal" data-category="web">
+          <div class="project-img-box">
+            <img src="assets/images/project_geotag.jpg" alt="GeoTag Issue Reporter System UI" class="project-img"
+              loading="lazy" />
+          </div>
+          <h3>GeoTag Issue Reporter System</h3>
+          <p class="project-desc">
+            Built an interactive civic and infrastructure issue reporting platform engineered with JavaScript and
+            Node.js. Features live GPS geotagging, interactive city map with status pins, photo/location evidence
+            uploads, automated issue lifecycle tracking (Reported, Investigating, Resolved), and a real-time community
+            monitoring dashboard.
+          </p>
+          <div class="project-pills">
+            <span class="project-pill">JavaScript</span>
+            <span class="project-pill">Node.js</span>
+            <span class="project-pill">Geolocation API</span>
+            <span class="project-pill">Interactive Maps</span>
+            <span class="project-pill">REST APIs</span>
+            <span class="project-pill">Community Dashboard</span>
+          </div>
+          <div class="project-actions">
+            <a href="#contact" class="btn btn-primary btn-sm">Inquire / Demo</a>
+            <a href="https://github.com/Kavin07077" target="_blank" rel="noreferrer"
+              class="btn btn-secondary btn-sm">GitHub</a>
+          </div>
+        </article>
+
+        <!-- Project 3: Advanced E-Commerce DBMS System -->
+        <article class="project-item glass reveal" data-category="dbms">
+          <div class="project-img-box">
+            <img src="assets/images/project_ecommerce.jpg" alt="Advanced E-Commerce Buy and Sell DBMS System UI"
+              class="project-img" loading="lazy" />
+          </div>
+          <h3>Advanced E-Commerce System</h3>
+          <p class="project-desc">
+            Developed a robust buy-and-sell object marketplace application backed by a relational Database Management
+            System (DBMS). Architected a normalized relational schema managing users, product listings, orders,
+            inventory, and transactions with ACID-compliant operations, indexed SQL queries, and an intuitive catalog
+            for buying and selling objects.
+          </p>
+          <div class="project-pills">
+            <span class="project-pill">DBMS & SQL</span>
+            <span class="project-pill">Relational Schema Design</span>
+            <span class="project-pill">Buy & Sell Marketplace</span>
+            <span class="project-pill">ACID Transactions</span>
+            <span class="project-pill">Inventory Control</span>
+            <span class="project-pill">Query Optimization</span>
+          </div>
+          <div class="project-actions">
+            <a href="#contact" class="btn btn-primary btn-sm">Inquire / Demo</a>
+            <a href="https://github.com/Kavin07077" target="_blank" rel="noreferrer"
+              class="btn btn-secondary btn-sm">GitHub</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+           EDUCATION SECTION
+           ========================================================================== -->
+    <section class="section" id="education">
+      <div class="section-title reveal">
+        <p class="eyebrow">Academic Background</p>
+        <h2>Education Qualifications</h2>
+      </div>
+
+      <div class="showcase-grid">
+        <div class="service-card glass reveal">
+          <p class="eyebrow">2024 — 2028 (Present)</p>
+          <h3>B.Tech (IT) Information Technology</h3>
+          <p style="color: var(--accent); font-weight: 700; margin-bottom: 0.5rem;">Current CGPA: 7.85 (upto 2nd
+            Semester)</p>
+          <p>M. Kumarasamy College of Engineering, Karur. Focusing on Software Development, Data Structures, OOP, and
+            Database Systems.</p>
+        </div>
+
+        <div class="service-card glass reveal">
+          <p class="eyebrow">2022 — 2024</p>
+          <h3>Higher Secondary Certificate (HSC)</h3>
+          <p style="color: var(--accent); font-weight: 700; margin-bottom: 0.5rem;">Academic Score: 83.5%</p>
+          <p>Akshaya Academy Matric Higher Secondary School. Solid foundation in Computer Science, Mathematics, and
+            Physical Sciences.</p>
+        </div>
+
+        <div class="service-card glass reveal">
+          <p class="eyebrow">2020 — 2022</p>
+          <h3>Secondary School Leaving Certificate (SSLC)</h3>
+          <p style="color: var(--accent); font-weight: 700; margin-bottom: 0.5rem;">Academic Score: 85.2%</p>
+          <p>Akshaya Academy Matric Higher Secondary School. Recognized for high academic diligence and logical
+            aptitude.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+           CONTACT SECTION
+           ========================================================================== -->
+    <section class="section" id="contact">
+      <div class="section-title reveal">
+        <p class="eyebrow">Connect</p>
+        <h2>Let's Build Something Together</h2>
+      </div>
+
+      <div class="contact-layout">
+        <!-- Details -->
+        <div class="contact-details">
+          <div class="contact-card-item glass reveal">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <p class="contact-label">Direct Email</p>
+              <a href="mailto:Kavinkaveen07@gmail.com" class="contact-val">Kavinkaveen07@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="contact-card-item glass reveal">
+            <div class="contact-icon">📞</div>
+            <div>
+              <p class="contact-label">Phone Number</p>
+              <a href="tel:+919894877263" class="contact-val">+91 9894877263</a>
+            </div>
+          </div>
+
+          <div class="contact-card-item glass reveal">
+            <div class="contact-icon">📍</div>
+            <div>
+              <p class="contact-label">Location / Address</p>
+              <p class="contact-val">Dindigul - 624614, Tamil Nadu, India</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="contact-form-box glass reveal">
+          <form id="contactForm" novalidate>
+            <div class="form-grid">
+              <div class="form-row-2">
+                <div class="form-field">
+                  <label for="name">Your Name</label>
+                  <input type="text" id="name" name="name" class="form-input" placeholder="e.g. Alex Chen" required />
+                </div>
+                <div class="form-field">
+                  <label for="email">Email Address</label>
+                  <input type="email" id="email" name="email" class="form-input" placeholder="alex@example.com"
+                    required />
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" class="form-input"
+                  placeholder="Collaboration / Opportunity" required />
+              </div>
+
+              <div class="form-field">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" class="form-textarea"
+                  placeholder="Tell me about your project or event..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary form-submit-btn" id="submitBtn">
+                <span class="btn-text">Send Message</span>
+                <span class="btn-spinner"></span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+         RESUME PREVIEW MODAL
+         ========================================================================== -->
+  <div class="modal-overlay" id="resumeModal" role="dialog" aria-modal="true" aria-labelledby="resumeName">
+    <div class="modal-dialog">
+      <button class="modal-close" id="closeResumeModal" aria-label="Close Resume">✕</button>
+
+      <div class="resume-paper">
+        <h2 id="resumeName">KAVIN N</h2>
+        <div class="meta">
+          <span>📞 +91 9894877263</span>
+          <span>✉️ Kavinkaveen07@gmail.com</span>
+          <span>📍 Dindigul - 624614</span>
+          <a href="https://www.linkedin.com/in/kavin-kavin" target="_blank" rel="noreferrer"
+            style="color: var(--accent);">LinkedIn Profile</a>
+          <a href="https://github.com/Kavin07077" target="_blank" rel="noreferrer" style="color: var(--accent);">GitHub
+            Profile</a>
+        </div>
+
+        <h3 class="resume-sec-title">Career Objective</h3>
+        <p style="color: var(--muted); margin-bottom: 1.2rem; line-height: 1.65;">
+          Aspiring to foster a collaborative tech community by organizing events that promote innovation and learning.
+          Eager to empower peers while growing as a leader through real-world problem solving and Google technologies.
+        </p>
+
+        <h3 class="resume-sec-title">Education Qualification</h3>
+        <div class="resume-block">
+          <div class="resume-block-head">
+            <span>B.TECH.(IT) Information Technology</span>
+            <span>2024 — 2028</span>
+          </div>
+          <div class="resume-block-sub">M. Kumarasamy College of Engineering, Karur • CGPA: 7.85 (upto 2nd Semester)
+          </div>
+        </div>
+        <div class="resume-block">
+          <div class="resume-block-head">
+            <span>HSC — 83.5%</span>
+            <span>2024</span>
+          </div>
+          <div class="resume-block-sub">Akshaya Academy Matric Higher Secondary School</div>
+        </div>
+        <div class="resume-block">
+          <div class="resume-block-head">
+            <span>SSLC — 85.2%</span>
+            <span>2022</span>
+          </div>
+          <div class="resume-block-sub">Akshaya Academy Matric Higher Secondary School</div>
+        </div>
+
+        <h3 class="resume-sec-title">Technical Skills & Interests</h3>
+        <p style="color: var(--text); line-height: 1.65;">
+          <strong>Languages & Runtimes:</strong> Java (Swing GUI), JavaScript (ES6+), Node.js, Python, C, C++<br />
+          <strong>Databases & Concepts:</strong> DBMS (Relational Databases), MySQL, SQLite, Relational Schema Design,
+          SQL Indexing, OOP Concepts (Classes, Objects, Inheritance), REST APIs<br />
+          <strong>Area of Interest:</strong> Software Developing, Full-Stack Systems, Database Architecture<br />
+          <strong>Soft Skills:</strong> Communication Skills, Teamwork & Collaboration, Community Organizing
+        </p>
+
+        <h3 class="resume-sec-title">Academic Projects</h3>
+        <div class="resume-block">
+          <div class="resume-block-head">
+            <span>TRAIN TICKET RESERVATION SYSTEM (Java, Java Swing)</span>
+          </div>
+          <p style="color: var(--muted); font-size: 0.9rem; line-height: 1.6;">
+            Engineered a desktop-based Train Ticket Reservation System in Java utilizing Java Swing for an interactive
+            graphical user interface. Designed modular backend architecture featuring railway route lookups, dynamic
+            coach & seat matrix allocation, automated PNR generation, ticket booking, cancellation workflows, and fare
+            calculations with persistent record management.
+          </p>
+        </div>
+        <div class="resume-block">
+          <div class="resume-block-head">
+            <span>GEOTAG ISSUE REPORTER SYSTEM (JavaScript, Node.js)</span>
+          </div>
+          <p style="color: var(--muted); font-size: 0.9rem; line-height: 1.6;">
+            Built an interactive civic and infrastructure issue reporting platform engineered with JavaScript and
+            Node.js. Features live GPS geotagging, interactive city map with status pins, photo/location evidence
+            uploads, automated issue lifecycle tracking (Reported, Investigating, Resolved), and a real-time community
+            monitoring dashboard.
+          </p>
+        </div>
+        <div class="resume-block">
+          <div class="resume-block-head">
+            <span>ADVANCED E-COMMERCE SYSTEM (DBMS, Relational Databases)</span>
+          </div>
+          <p style="color: var(--muted); font-size: 0.9rem; line-height: 1.6;">
+            Developed a robust buy-and-sell object marketplace application backed by a relational Database Management
+            System (DBMS). Architected a normalized relational schema managing users, product listings, orders,
+            inventory, and transactions with ACID-compliant operations, indexed SQL queries, and an intuitive catalog
+            for buying and selling objects.
+          </p>
+        </div>
+
+        <h3 class="resume-sec-title">Personal Details</h3>
+        <p style="color: var(--muted); font-size: 0.9rem; line-height: 1.65;">
+          <strong>Father:</strong> Natchimuthu V &nbsp;|&nbsp; <strong>Mother:</strong> Kaleeswari N<br />
+          <strong>DOB:</strong> 08/07/2006<br />
+          <strong>Languages Known:</strong> Tamil (Read, Write, Speak), English (Read, Write, Speak)<br />
+          <strong>Hobbies:</strong> Exploring new places, Reading books and stories
+        </p>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn btn-primary" onclick="window.print()">Print / Save as PDF</button>
+        <button class="btn btn-secondary" id="dismissResumeModal">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Feedback Notification -->
+  <div class="toast-feedback" id="toastFeedback" role="alert">
+    <span>✨</span>
+    <div>
+      <strong id="toastTitle" style="display: block; font-size: 0.95rem;">Message Sent!</strong>
+      <span id="toastMsg" style="font-size: 0.85rem; color: var(--muted);">Thank you for reaching out to Kavin N.</span>
+    </div>
+  </div>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <!-- ==========================================================================
+         FOOTER
+         ========================================================================== -->
+  <footer class="site-footer">
+    <div class="footer-content" style="width: min(1120px, 92%); margin: 0 auto;">
       <a href="#hero" class="logo">
         <span class="logo-badge">K</span>
         <span>KAVIN N</span>
       </a>
 
-      <!-- Navigation Links -->
-      <nav class="site-nav" id="siteNav">
+      <div class="footer-links">
         <a href="#about">About</a>
         <a href="#stats">Stats</a>
         <a href="#skills">Skills</a>
-        <a href="#services">Services</a>
         <a href="#projects">Projects</a>
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
-        <div class="mobile-nav-actions">
-          <button class="btn btn-primary btn-sm mobile-resume-btn" id="mobileResumeBtn">
-            <span>View Resume</span>
-          </button>
-        </div>
-      </nav>
-
-      <!-- Header Actions -->
-      <div class="header-actions">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark and light mode">
-          <span class="theme-icon" aria-hidden="true">🌓</span>
-          <span class="theme-text">Theme</span>
-        </button>
-        <button class="btn btn-secondary btn-sm header-resume-btn" id="openResumeModal">
-          <span>Resume</span>
-        </button>
-        <!-- Mobile Hamburger Toggle -->
-        <button
-          class="nav-toggle"
-          id="navToggle"
-          aria-label="Toggle navigation menu"
-          aria-expanded="false"
-          aria-controls="siteNav"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
       </div>
-    </header>
-    <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
 
-    <main>
-      <!-- ==========================================================================
-           HERO SECTION
-           ========================================================================== -->
-      <section class="hero section" id="hero">
-        <div class="hero-grid"></div>
-        <div class="hero-content reveal">
-          <p class="eyebrow">Aspiring Software Developer • Tech Community Enthusiast • B.Tech IT</p>
-          <h1
-            class="typing-name"
-            id="typingName"
-            data-text="KAVIN N"
-            aria-label="KAVIN N"
-          ></h1>
-          <p class="subheading">
-            Aspiring to foster a collaborative tech community by organizing events that promote innovation and learning. Eager to empower peers while growing as a leader through real-world problem solving and Google technologies.
-          </p>
-          <div class="cta-group">
-            <a href="#projects" class="btn btn-primary magnetic">View Projects</a>
-            <a href="#contact" class="btn btn-secondary magnetic">Get In Touch</a>
-            <button class="btn btn-secondary magnetic" id="heroResumeBtn">View Resume</button>
-            <a
-              href="https://www.linkedin.com/in/kavin-kavin"
-              target="_blank"
-              rel="noreferrer"
-              class="btn btn-linkedin magnetic"
-            >View LinkedIn Profile</a>
-          </div>
-        </div>
-
-        <!-- Hero Visual: Floating Orbs + 3D Tilt Avatar Card -->
-        <div class="hero-visual parallax" data-speed="0.08">
-          <div class="orb orb-one"></div>
-          <div class="orb orb-two"></div>
-          <div class="avatar-card tilt-card glass">
-            <div class="avatar-glow"></div>
-            <div class="avatar-core">
-              <img src="assets/images/avatar.jpg" alt="Portrait of KAVIN N" class="hero-portrait" />
-            </div>
-            <p>Futuristic Developer & Tech Explorer</p>
-            <div class="hero-caption">
-              <h3>KAVIN N</h3>
-              <p>Software Developing • Tech Community</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ==========================================================================
-           ABOUT SECTION
-           ========================================================================== -->
-      <section class="about section" id="about">
-        <div class="section-title reveal">
-          <p class="eyebrow">About</p>
-          <h2>Building Meaningful Digital Solutions</h2>
-        </div>
-
-        <div class="about-layout">
-          <!-- Profile Visual & Tags -->
-          <article class="about-card glass reveal">
-            <div class="profile-wrap">
-              <div class="profile-frame">
-                <img src="assets/images/about_kavin.jpg" alt="Portrait of Kavin N" />
-              </div>
-              <div class="profile-info">
-                <div class="profile-tags">
-                  <span>B.Tech IT (2024–2028)</span>
-                  <span>Java & Swing</span>
-                  <span>JavaScript & Node.js</span>
-                  <span>DBMS & SQL</span>
-                  <span>Python</span>
-                  <span>C / C++</span>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Narrative & Journey Timeline -->
-          <article class="timeline glass reveal">
-            <h3>Hi, I am KAVIN N.</h3>
-            <p class="project-desc">
-              I am a passionate Information Technology undergraduate at M. Kumarasamy College of Engineering, Karur. My core drive is software development, solving analytical problems, and researching modern technology ecosystems.
-            </p>
-            <p class="project-desc">
-              I actively work to empower peers and build collaborative technical environments by organizing interactive learning events and exploring Google technologies.
-            </p>
-
-            <h3 style="margin-top: 1.6rem;">Journey Milestones</h3>
-            <ul>
-              <li>
-                <span class="num">01</span>
-                <div>
-                  <strong>Secondary School Leaving Certificate (SSLC) — 85.2%</strong>
-                  <p style="color: var(--muted); font-size: 0.88rem;">Akshaya Academy Matric Higher Secondary School (2022)</p>
-                </div>
-              </li>
-              <li>
-                <span class="num">02</span>
-                <div>
-                  <strong>Higher Secondary Certificate (HSC) — 83.5%</strong>
-                  <p style="color: var(--muted); font-size: 0.88rem;">Akshaya Academy Matric Higher Secondary School (2024)</p>
-                </div>
-              </li>
-              <li>
-                <span class="num">03</span>
-                <div>
-                  <strong>B.Tech Information Technology — 7.85 CGPA</strong>
-                  <p style="color: var(--muted); font-size: 0.88rem;">M. Kumarasamy College of Engineering, Karur (2024–2028, upto 2nd Sem)</p>
-                </div>
-              </li>
-              <li>
-                <span class="num">04</span>
-                <div>
-                  <strong>Mission & Vision</strong>
-                  <p style="color: var(--muted); font-size: 0.88rem;">Empowering a collaborative tech community through Google technologies and real-world problem solving.</p>
-                </div>
-              </li>
-            </ul>
-
-            <!-- Personal Meta Grid -->
-            <div class="personal-meta-grid">
-              <div class="personal-meta-item">
-                <span class="meta-label">Location</span>
-                <span class="meta-value">Dindigul - 624614, Tamil Nadu</span>
-              </div>
-              <div class="personal-meta-item">
-                <span class="meta-label">Languages Known</span>
-                <span class="meta-value">Tamil & English (Read, Write, Speak)</span>
-              </div>
-              <div class="personal-meta-item">
-                <span class="meta-label">Areas of Interest</span>
-                <span class="meta-value">Software Developing, Technology Research</span>
-              </div>
-              <div class="personal-meta-item">
-                <span class="meta-label">Hobbies</span>
-                <span class="meta-value">Exploring new places, Reading books & stories</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- ==========================================================================
-           STATS SECTION
-           ========================================================================== -->
-      <section class="section" id="stats">
-        <div class="section-title reveal">
-          <p class="eyebrow">Academic Stats</p>
-          <h2>Numbers & Milestones</h2>
-        </div>
-
-        <div class="stats-grid">
-          <div class="stat-card glass reveal">
-            <h3 class="count-val" data-target="7.85" data-is-decimal="true">7.85</h3>
-            <p>B.Tech IT CGPA (upto 2nd Sem)</p>
-          </div>
-          <div class="stat-card glass reveal">
-            <h3 class="count-val" data-target="84">84%</h3>
-            <p>Average Board Exam Score</p>
-          </div>
-          <div class="stat-card glass reveal">
-            <h3 class="count-val" data-target="3">3+</h3>
-            <p>Core Academic Systems Built</p>
-          </div>
-          <div class="stat-card glass reveal">
-            <h3 class="count-val" data-target="2028">2028</h3>
-            <p>Graduation Year (MKCE Karur)</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- ==========================================================================
-           SKILLS SECTION
-           ========================================================================== -->
-      <section class="section" id="skills">
-        <div class="section-title reveal">
-          <p class="eyebrow">Technical Competencies</p>
-          <h2>Skills & Technologies</h2>
-        </div>
-
-        <div class="skills-grid">
-          <!-- Card 1: Programming & Technologies -->
-          <div class="skill-card glass reveal">
-            <h3>
-              <span class="skill-icon">⚡</span>
-              <span>Languages & Frameworks</span>
-            </h3>
-            <div class="skill-badges">
-              <span class="skill-tag">Java (Swing)</span>
-              <span class="skill-tag">JavaScript (ES6+)</span>
-              <span class="skill-tag">Node.js</span>
-              <span class="skill-tag">Python</span>
-              <span class="skill-tag">C / C++</span>
-              <span class="skill-tag">Logic Building</span>
-            </div>
-          </div>
-
-          <!-- Card 2: Databases & Concepts -->
-          <div class="skill-card glass reveal">
-            <h3>
-              <span class="skill-icon">💾</span>
-              <span>Databases & Architecture</span>
-            </h3>
-            <div class="skill-badges">
-              <span class="skill-tag">DBMS (Relational)</span>
-              <span class="skill-tag">MySQL</span>
-              <span class="skill-tag">SQLite</span>
-              <span class="skill-tag">Schema Design</span>
-              <span class="skill-tag">OOP Architecture</span>
-              <span class="skill-tag">RESTful APIs</span>
-            </div>
-          </div>
-
-          <!-- Card 3: Soft Skills & Leadership -->
-          <div class="skill-card glass reveal">
-            <h3>
-              <span class="skill-icon">🚀</span>
-              <span>Leadership & Soft Skills</span>
-            </h3>
-            <div class="skill-badges">
-              <span class="skill-tag">Community Organizing</span>
-              <span class="skill-tag">Google Technologies</span>
-              <span class="skill-tag">Communication Skills</span>
-              <span class="skill-tag">Teamwork & Collaboration</span>
-              <span class="skill-tag">Technology Research</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ==========================================================================
-           SERVICES / COMPETENCIES
-           ========================================================================== -->
-      <section class="section" id="services">
-        <div class="section-title reveal">
-          <p class="eyebrow">What I Do</p>
-          <h2>Core Focus Areas</h2>
-        </div>
-
-        <div class="services-grid">
-          <div class="service-card glass reveal">
-            <h3>Software Developing</h3>
-            <p>Building clean, modular, and functional applications in Python, C++, and Java with focus on logic and system architecture.</p>
-          </div>
-          <div class="service-card glass reveal">
-            <h3>Database & Data Management</h3>
-            <p>Designing structured relational database schemas and reliable file handling systems using SQLite and MySQL.</p>
-          </div>
-          <div class="service-card glass reveal">
-            <h3>Tech Community Organizing</h3>
-            <p>Empowering student peers through coding workshops, technical hackathons, and Google developer technology sessions.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- ==========================================================================
-           PROJECTS SECTION
-           ========================================================================== -->
-      <section class="section" id="projects">
-        <div class="section-title reveal">
-          <p class="eyebrow">Featured Work</p>
-          <h2>Academic Projects</h2>
-        </div>
-
-        <!-- Filter bar -->
-        <div class="projects-filter-bar reveal">
-          <button class="filter-btn active" data-filter="all">All Projects</button>
-          <button class="filter-btn" data-filter="java">Java & Swing</button>
-          <button class="filter-btn" data-filter="web">JavaScript & Node.js</button>
-          <button class="filter-btn" data-filter="dbms">DBMS Project</button>
-        </div>
-
-        <div class="showcase-grid">
-          <!-- Project 1: Train Ticket Reservation System -->
-          <article class="project-item glass reveal" data-category="java">
-            <div class="project-img-box">
-              <img src="assets/images/project_train.jpg" alt="Train Ticket Reservation System UI" class="project-img" loading="lazy" />
-            </div>
-            <h3>Train Ticket Reservation System</h3>
-            <p class="project-desc">
-              Engineered a comprehensive desktop Train Ticket Reservation System in Java utilizing Java Swing for an interactive graphical user interface. Designed modular backend architecture featuring railway route lookups, dynamic coach & seat matrix allocation, automated PNR generation, ticket booking, cancellation workflows, and fare calculations with persistent record management.
-            </p>
-            <div class="project-pills">
-              <span class="project-pill">Java</span>
-              <span class="project-pill">Java Swing GUI</span>
-              <span class="project-pill">OOP Architecture</span>
-              <span class="project-pill">PNR & Ticketing Logic</span>
-              <span class="project-pill">Database Persistence</span>
-            </div>
-            <div class="project-actions">
-              <a href="#contact" class="btn btn-primary btn-sm">Inquire / Demo</a>
-              <a href="https://github.com/Kavin07077" target="_blank" rel="noreferrer" class="btn btn-secondary btn-sm">GitHub</a>
-            </div>
-          </article>
-
-          <!-- Project 2: GeoTag Issue Reporter System -->
-          <article class="project-item glass reveal" data-category="web">
-            <div class="project-img-box">
-              <img src="assets/images/project_geotag.jpg" alt="GeoTag Issue Reporter System UI" class="project-img" loading="lazy" />
-            </div>
-            <h3>GeoTag Issue Reporter System</h3>
-            <p class="project-desc">
-              Built an interactive civic and infrastructure issue reporting platform engineered with JavaScript and Node.js. Features live GPS geotagging, interactive city map with status pins, photo/location evidence uploads, automated issue lifecycle tracking (Reported, Investigating, Resolved), and a real-time community monitoring dashboard.
-            </p>
-            <div class="project-pills">
-              <span class="project-pill">JavaScript</span>
-              <span class="project-pill">Node.js</span>
-              <span class="project-pill">Geolocation API</span>
-              <span class="project-pill">Interactive Maps</span>
-              <span class="project-pill">REST APIs</span>
-              <span class="project-pill">Community Dashboard</span>
-            </div>
-            <div class="project-actions">
-              <a href="#contact" class="btn btn-primary btn-sm">Inquire / Demo</a>
-              <a href="https://github.com/Kavin07077" target="_blank" rel="noreferrer" class="btn btn-secondary btn-sm">GitHub</a>
-            </div>
-          </article>
-
-          <!-- Project 3: Advanced E-Commerce DBMS System -->
-          <article class="project-item glass reveal" data-category="dbms">
-            <div class="project-img-box">
-              <img src="assets/images/project_ecommerce.jpg" alt="Advanced E-Commerce Buy and Sell DBMS System UI" class="project-img" loading="lazy" />
-            </div>
-            <h3>Advanced E-Commerce System</h3>
-            <p class="project-desc">
-              Developed a robust buy-and-sell object marketplace application backed by a relational Database Management System (DBMS). Architected a normalized relational schema managing users, product listings, orders, inventory, and transactions with ACID-compliant operations, indexed SQL queries, and an intuitive catalog for buying and selling objects.
-            </p>
-            <div class="project-pills">
-              <span class="project-pill">DBMS & SQL</span>
-              <span class="project-pill">Relational Schema Design</span>
-              <span class="project-pill">Buy & Sell Marketplace</span>
-              <span class="project-pill">ACID Transactions</span>
-              <span class="project-pill">Inventory Control</span>
-              <span class="project-pill">Query Optimization</span>
-            </div>
-            <div class="project-actions">
-              <a href="#contact" class="btn btn-primary btn-sm">Inquire / Demo</a>
-              <a href="https://github.com/Kavin07077" target="_blank" rel="noreferrer" class="btn btn-secondary btn-sm">GitHub</a>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- ==========================================================================
-           EDUCATION SECTION
-           ========================================================================== -->
-      <section class="section" id="education">
-        <div class="section-title reveal">
-          <p class="eyebrow">Academic Background</p>
-          <h2>Education Qualifications</h2>
-        </div>
-
-        <div class="showcase-grid">
-          <div class="service-card glass reveal">
-            <p class="eyebrow">2024 — 2028 (Present)</p>
-            <h3>B.Tech (IT) Information Technology</h3>
-            <p style="color: var(--accent); font-weight: 700; margin-bottom: 0.5rem;">Current CGPA: 7.85 (upto 2nd Semester)</p>
-            <p>M. Kumarasamy College of Engineering, Karur. Focusing on Software Development, Data Structures, OOP, and Database Systems.</p>
-          </div>
-
-          <div class="service-card glass reveal">
-            <p class="eyebrow">2022 — 2024</p>
-            <h3>Higher Secondary Certificate (HSC)</h3>
-            <p style="color: var(--accent); font-weight: 700; margin-bottom: 0.5rem;">Academic Score: 83.5%</p>
-            <p>Akshaya Academy Matric Higher Secondary School. Solid foundation in Computer Science, Mathematics, and Physical Sciences.</p>
-          </div>
-
-          <div class="service-card glass reveal">
-            <p class="eyebrow">2020 — 2022</p>
-            <h3>Secondary School Leaving Certificate (SSLC)</h3>
-            <p style="color: var(--accent); font-weight: 700; margin-bottom: 0.5rem;">Academic Score: 85.2%</p>
-            <p>Akshaya Academy Matric Higher Secondary School. Recognized for high academic diligence and logical aptitude.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- ==========================================================================
-           CONTACT SECTION
-           ========================================================================== -->
-      <section class="section" id="contact">
-        <div class="section-title reveal">
-          <p class="eyebrow">Connect</p>
-          <h2>Let's Build Something Together</h2>
-        </div>
-
-        <div class="contact-layout">
-          <!-- Details -->
-          <div class="contact-details">
-            <div class="contact-card-item glass reveal">
-              <div class="contact-icon">✉️</div>
-              <div>
-                <p class="contact-label">Direct Email</p>
-                <a href="mailto:Kavinkaveen07@gmail.com" class="contact-val">Kavinkaveen07@gmail.com</a>
-              </div>
-            </div>
-
-            <div class="contact-card-item glass reveal">
-              <div class="contact-icon">📞</div>
-              <div>
-                <p class="contact-label">Phone Number</p>
-                <a href="tel:+919894877263" class="contact-val">+91 9894877263</a>
-              </div>
-            </div>
-
-            <div class="contact-card-item glass reveal">
-              <div class="contact-icon">📍</div>
-              <div>
-                <p class="contact-label">Location / Address</p>
-                <p class="contact-val">Dindigul - 624614, Tamil Nadu, India</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Form -->
-          <div class="contact-form-box glass reveal">
-            <form id="contactForm" novalidate>
-              <div class="form-grid">
-                <div class="form-row-2">
-                  <div class="form-field">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" class="form-input" placeholder="e.g. Alex Chen" required />
-                  </div>
-                  <div class="form-field">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" class="form-input" placeholder="alex@example.com" required />
-                  </div>
-                </div>
-
-                <div class="form-field">
-                  <label for="subject">Subject</label>
-                  <input type="text" id="subject" name="subject" class="form-input" placeholder="Collaboration / Opportunity" required />
-                </div>
-
-                <div class="form-field">
-                  <label for="message">Message</label>
-                  <textarea id="message" name="message" class="form-textarea" placeholder="Tell me about your project or event..." required></textarea>
-                </div>
-
-                <button type="submit" class="btn btn-primary form-submit-btn" id="submitBtn">
-                  <span class="btn-text">Send Message</span>
-                  <span class="btn-spinner"></span>
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- ==========================================================================
-         RESUME PREVIEW MODAL
-         ========================================================================== -->
-    <div class="modal-overlay" id="resumeModal" role="dialog" aria-modal="true" aria-labelledby="resumeName">
-      <div class="modal-dialog">
-        <button class="modal-close" id="closeResumeModal" aria-label="Close Resume">✕</button>
-
-        <div class="resume-paper">
-          <h2 id="resumeName">KAVIN N</h2>
-          <div class="meta">
-            <span>📞 +91 9894877263</span>
-            <span>✉️ Kavinkaveen07@gmail.com</span>
-            <span>📍 Dindigul - 624614</span>
-            <a href="https://www.linkedin.com/in/kavin-kavin" target="_blank" rel="noreferrer" style="color: var(--accent);">LinkedIn Profile</a>
-            <a href="https://github.com/Kavin07077" target="_blank" rel="noreferrer" style="color: var(--accent);">GitHub Profile</a>
-          </div>
-
-          <h3 class="resume-sec-title">Career Objective</h3>
-          <p style="color: var(--muted); margin-bottom: 1.2rem; line-height: 1.65;">
-            Aspiring to foster a collaborative tech community by organizing events that promote innovation and learning. Eager to empower peers while growing as a leader through real-world problem solving and Google technologies.
-          </p>
-
-          <h3 class="resume-sec-title">Education Qualification</h3>
-          <div class="resume-block">
-            <div class="resume-block-head">
-              <span>B.TECH.(IT) Information Technology</span>
-              <span>2024 — 2028</span>
-            </div>
-            <div class="resume-block-sub">M. Kumarasamy College of Engineering, Karur • CGPA: 7.85 (upto 2nd Semester)</div>
-          </div>
-          <div class="resume-block">
-            <div class="resume-block-head">
-              <span>HSC — 83.5%</span>
-              <span>2024</span>
-            </div>
-            <div class="resume-block-sub">Akshaya Academy Matric Higher Secondary School</div>
-          </div>
-          <div class="resume-block">
-            <div class="resume-block-head">
-              <span>SSLC — 85.2%</span>
-              <span>2022</span>
-            </div>
-            <div class="resume-block-sub">Akshaya Academy Matric Higher Secondary School</div>
-          </div>
-
-          <h3 class="resume-sec-title">Technical Skills & Interests</h3>
-          <p style="color: var(--text); line-height: 1.65;">
-            <strong>Languages & Runtimes:</strong> Java (Swing GUI), JavaScript (ES6+), Node.js, Python, C, C++<br />
-            <strong>Databases & Concepts:</strong> DBMS (Relational Databases), MySQL, SQLite, Relational Schema Design, SQL Indexing, OOP Concepts (Classes, Objects, Inheritance), REST APIs<br />
-            <strong>Area of Interest:</strong> Software Developing, Full-Stack Systems, Database Architecture<br />
-            <strong>Soft Skills:</strong> Communication Skills, Teamwork & Collaboration, Community Organizing
-          </p>
-
-          <h3 class="resume-sec-title">Academic Projects</h3>
-          <div class="resume-block">
-            <div class="resume-block-head">
-              <span>TRAIN TICKET RESERVATION SYSTEM (Java, Java Swing)</span>
-            </div>
-            <p style="color: var(--muted); font-size: 0.9rem; line-height: 1.6;">
-              Engineered a desktop-based Train Ticket Reservation System in Java utilizing Java Swing for an interactive graphical user interface. Designed modular backend architecture featuring railway route lookups, dynamic coach & seat matrix allocation, automated PNR generation, ticket booking, cancellation workflows, and fare calculations with persistent record management.
-            </p>
-          </div>
-          <div class="resume-block">
-            <div class="resume-block-head">
-              <span>GEOTAG ISSUE REPORTER SYSTEM (JavaScript, Node.js)</span>
-            </div>
-            <p style="color: var(--muted); font-size: 0.9rem; line-height: 1.6;">
-              Built an interactive civic and infrastructure issue reporting platform engineered with JavaScript and Node.js. Features live GPS geotagging, interactive city map with status pins, photo/location evidence uploads, automated issue lifecycle tracking (Reported, Investigating, Resolved), and a real-time community monitoring dashboard.
-            </p>
-          </div>
-          <div class="resume-block">
-            <div class="resume-block-head">
-              <span>ADVANCED E-COMMERCE SYSTEM (DBMS, Relational Databases)</span>
-            </div>
-            <p style="color: var(--muted); font-size: 0.9rem; line-height: 1.6;">
-              Developed a robust buy-and-sell object marketplace application backed by a relational Database Management System (DBMS). Architected a normalized relational schema managing users, product listings, orders, inventory, and transactions with ACID-compliant operations, indexed SQL queries, and an intuitive catalog for buying and selling objects.
-            </p>
-          </div>
-
-          <h3 class="resume-sec-title">Personal Details</h3>
-          <p style="color: var(--muted); font-size: 0.9rem; line-height: 1.65;">
-            <strong>Father:</strong> Natchimuthu V &nbsp;|&nbsp; <strong>Mother:</strong> Kaleeswari N<br />
-            <strong>DOB:</strong> 08/07/2006<br />
-            <strong>Languages Known:</strong> Tamil (Read, Write, Speak), English (Read, Write, Speak)<br />
-            <strong>Hobbies:</strong> Exploring new places, Reading books and stories
-          </p>
-        </div>
-
-        <div class="modal-actions">
-          <button class="btn btn-primary" onclick="window.print()">Print / Save as PDF</button>
-          <button class="btn btn-secondary" id="dismissResumeModal">Close</button>
-        </div>
-      </div>
+      <p class="footer-copy">© 2026 KAVIN N. All rights reserved.</p>
     </div>
+  </footer>
 
-    <!-- Toast Feedback Notification -->
-    <div class="toast-feedback" id="toastFeedback" role="alert">
-      <span>✨</span>
-      <div>
-        <strong id="toastTitle" style="display: block; font-size: 0.95rem;">Message Sent!</strong>
-        <span id="toastMsg" style="font-size: 0.85rem; color: var(--muted);">Thank you for reaching out to Kavin N.</span>
-      </div>
-    </div>
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+</body>
 
-    <!-- Floating Back to Top Button -->
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
-
-    <!-- ==========================================================================
-         FOOTER
-         ========================================================================== -->
-    <footer class="site-footer">
-      <div class="footer-content" style="width: min(1120px, 92%); margin: 0 auto;">
-        <a href="#hero" class="logo">
-          <span class="logo-badge">K</span>
-          <span>KAVIN N</span>
-        </a>
-
-        <div class="footer-links">
-          <a href="#about">About</a>
-          <a href="#stats">Stats</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#education">Education</a>
-          <a href="#contact">Contact</a>
-        </div>
-
-        <p class="footer-copy">© 2026 KAVIN N. All rights reserved.</p>
-      </div>
-    </footer>
-
-    <!-- JavaScript -->
-    <script src="js/main.js"></script>
-  </body>
 </html>

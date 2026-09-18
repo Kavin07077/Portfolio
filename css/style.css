@@ -24,31 +24,279 @@
 html[data-theme="light"] {
   --bg: #f4f7ff;
   --bg-alt: #e9efff;
-  --text: #121626;
-  --muted: #536081;
-  --border: rgba(10, 22, 42, 0.12);
-  --glass: rgba(255, 255, 255, 0.6);
-  --glow: 0 0 20px rgba(64, 156, 255, 0.25);
-  --glow-purple: 0 0 20px rgba(124, 58, 237, 0.2);
-  --card-shadow: 0 18px 40px rgba(38, 60, 111, 0.16);
+  --text: #050811;
+  --muted: #1e293b;
+  --border: rgba(15, 23, 42, 0.15);
+  --glass: rgba(255, 255, 255, 0.78);
+  --primary: #6366f1;
+  --secondary: #0284c7;
+  --accent: #026aa7;
+  --glow: 0 0 20px rgba(64, 156, 255, 0.22);
+  --glow-purple: 0 0 20px rgba(124, 58, 237, 0.18);
+  --card-shadow: 0 16px 36px rgba(15, 23, 42, 0.09);
+}
+
+/* ==========================================================================
+   LIGHT THEME TYPOGRAPHY & CONTRAST (High Visibility & Black Name Fonts)
+   ========================================================================== */
+
+html[data-theme="light"] body {
+  font-weight: 500;
+  color: #050811;
+}
+
+/* All name fonts pure black in light theme */
+html[data-theme="light"] .typing-name {
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  -webkit-text-fill-color: #000000 !important;
+  color: #000000 !important;
+  font-weight: 800 !important;
+  text-shadow: none !important;
+}
+
+html[data-theme="light"] .typing-name::after {
+  background: #000000 !important;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4) !important;
+}
+
+html[data-theme="light"] .logo {
+  color: #000000 !important;
+  font-weight: 800 !important;
+}
+
+html[data-theme="light"] .hero-caption h3 {
+  color: #000000 !important;
+  font-weight: 800 !important;
+}
+
+html[data-theme="light"] #resumeName {
+  color: #000000 !important;
+  font-weight: 800 !important;
+}
+
+html[data-theme="light"] .eyebrow {
+  color: #026aa7 !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.16em;
+}
+
+html[data-theme="light"] .subheading {
+  color: #1e293b !important;
+  font-weight: 600 !important;
 }
 
 html[data-theme="light"] .section-title h2 {
-  background: linear-gradient(115deg, #17264d 0%, #214a8a 52%, #0b7285 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  -webkit-text-fill-color: #050811 !important;
+  color: #050811 !important;
+  font-weight: 800 !important;
 }
 
-html[data-theme="light"] .hero-caption p,
+html[data-theme="light"] p {
+  color: #1e293b;
+  font-weight: 500;
+}
+
+html[data-theme="light"] .project-desc,
+html[data-theme="light"] .service-card p {
+  color: #1e293b !important;
+  font-weight: 500 !important;
+}
+
+html[data-theme="light"] .site-nav a,
+html[data-theme="light"] .footer-links a {
+  color: #1e293b !important;
+  font-weight: 600 !important;
+}
+
+html[data-theme="light"] .site-nav a:hover,
+html[data-theme="light"] .site-nav a.active {
+  color: #000000 !important;
+  font-weight: 700 !important;
+}
+
+html[data-theme="light"] .btn-secondary {
+  background: rgba(255, 255, 255, 0.88) !important;
+  border-color: rgba(15, 23, 42, 0.22) !important;
+  color: #050811 !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08) !important;
+}
+
+html[data-theme="light"] .btn-secondary:hover {
+  background: #ffffff !important;
+  border-color: #026aa7 !important;
+  color: #026aa7 !important;
+}
+
+html[data-theme="light"] .avatar-card {
+  background: rgba(255, 255, 255, 0.82) !important;
+  border-color: rgba(56, 120, 199, 0.25) !important;
+  box-shadow: 0 20px 45px rgba(25, 45, 90, 0.12) !important;
+}
+
+html[data-theme="light"] .avatar-card .avatar-core {
+  background: #ffffff !important;
+  border-color: rgba(56, 120, 199, 0.3) !important;
+}
+
 html[data-theme="light"] .avatar-card > p {
-  color: #33486f;
+  color: #1e293b !important;
+  font-weight: 600 !important;
+}
+
+html[data-theme="light"] .hero-caption p {
+  color: #334155 !important;
+  font-weight: 600 !important;
+}
+
+html[data-theme="light"] .theme-toggle {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(15, 23, 42, 0.2) !important;
+  color: #050811 !important;
+  font-weight: 700 !important;
+}
+
+html[data-theme="light"] .stat-card {
+  background: rgba(255, 255, 255, 0.78) !important;
+  border-color: rgba(15, 23, 42, 0.14) !important;
+}
+
+html[data-theme="light"] .stat-card h3 {
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  -webkit-text-fill-color: #000000 !important;
+  color: #000000 !important;
+  font-weight: 800 !important;
+}
+
+html[data-theme="light"] .stat-card p {
+  color: #1e293b !important;
+  font-weight: 700 !important;
+}
+
+html[data-theme="light"] .about-card,
+html[data-theme="light"] .timeline,
+html[data-theme="light"] .skill-card,
+html[data-theme="light"] .service-card,
+html[data-theme="light"] .project-item,
+html[data-theme="light"] .contact-card-item,
+html[data-theme="light"] .contact-form-box {
+  background: rgba(255, 255, 255, 0.78) !important;
+  border-color: rgba(15, 23, 42, 0.14) !important;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08) !important;
+}
+
+html[data-theme="light"] .about-card h3,
+html[data-theme="light"] .timeline h3,
+html[data-theme="light"] .skill-card h3,
+html[data-theme="light"] .service-card h3,
+html[data-theme="light"] .project-item h3 {
+  color: #000000 !important;
+  font-weight: 800 !important;
 }
 
 html[data-theme="light"] .profile-tags span {
-  color: #294166;
-  border-color: rgba(56, 120, 199, 0.28);
-  background: linear-gradient(140deg, rgba(124, 58, 237, 0.12), rgba(6, 182, 212, 0.1));
+  color: #0f172a !important;
+  font-weight: 700 !important;
+  border-color: rgba(56, 120, 199, 0.32) !important;
+  background: linear-gradient(140deg, rgba(124, 58, 237, 0.14), rgba(6, 182, 212, 0.14)) !important;
+}
+
+html[data-theme="light"] .skill-tag,
+html[data-theme="light"] .project-pill {
+  color: #050811 !important;
+  font-weight: 600 !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(15, 23, 42, 0.2) !important;
+}
+
+html[data-theme="light"] .filter-btn {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(15, 23, 42, 0.2) !important;
+  color: #1e293b !important;
+  font-weight: 600 !important;
+}
+
+html[data-theme="light"] .filter-btn.active {
+  background: rgba(2, 106, 167, 0.15) !important;
+  border-color: #026aa7 !important;
+  color: #000000 !important;
+  font-weight: 800 !important;
+}
+
+html[data-theme="light"] .timeline li {
+  color: #1e293b !important;
+  font-weight: 500 !important;
+}
+
+html[data-theme="light"] .timeline strong {
+  color: #000000 !important;
+  font-weight: 700 !important;
+}
+
+html[data-theme="light"] .contact-label,
+html[data-theme="light"] .meta-label {
+  color: #026aa7 !important;
+  font-weight: 800 !important;
+}
+
+html[data-theme="light"] .contact-val,
+html[data-theme="light"] .meta-value {
+  color: #000000 !important;
+  font-weight: 700 !important;
+}
+
+html[data-theme="light"] .contact-icon {
+  background: rgba(2, 106, 167, 0.12) !important;
+  border-color: rgba(2, 106, 167, 0.3) !important;
+  color: #026aa7 !important;
+}
+
+html[data-theme="light"] .form-field label {
+  color: #050811 !important;
+  font-weight: 700 !important;
+}
+
+html[data-theme="light"] .form-input,
+html[data-theme="light"] .form-textarea {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.22) !important;
+  color: #050811 !important;
+  font-weight: 600 !important;
+}
+
+html[data-theme="light"] .resume-paper {
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .resume-paper strong {
+  color: #000000 !important;
+}
+
+html[data-theme="light"] .resume-sec-title {
+  color: #026aa7 !important;
+  font-weight: 800 !important;
+}
+
+html[data-theme="light"] .resume-block-head span {
+  color: #000000 !important;
+  font-weight: 800 !important;
+}
+
+html[data-theme="light"] .resume-block-sub {
+  color: #1e293b !important;
+  font-weight: 600 !important;
+}
+
+html[data-theme="light"] .resume-block p {
+  color: #1e293b !important;
+  font-weight: 500 !important;
 }
 
 /* ==========================================================================
@@ -1823,4 +2071,264 @@ h1 {
   .avatar-card:hover {
     transform: none !important;
   }
+}
+
+/* ==========================================================================
+   DEFINITIVE LIGHT THEME OVERRIDES (Black Name Fonts & Bold Visible Text)
+   ========================================================================== */
+
+html[data-theme="light"] {
+  --text: #050811;
+  --muted: #1e293b;
+  --border: rgba(15, 23, 42, 0.16);
+  --glass: rgba(255, 255, 255, 0.82);
+  --accent: #026aa7;
+}
+
+html[data-theme="light"] body {
+  color: #050811 !important;
+  font-weight: 500;
+}
+
+/* Name fonts pure solid black in light theme */
+html[data-theme="light"] h1,
+html[data-theme="light"] h1.typing-name,
+html[data-theme="light"] .typing-name,
+html[data-theme="light"] #typingName {
+  background: none !important;
+  background-image: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  -webkit-text-fill-color: #000000 !important;
+  color: #000000 !important;
+  font-weight: 800 !important;
+  text-shadow: none !important;
+}
+
+html[data-theme="light"] .typing-name::after,
+html[data-theme="light"] #typingName::after {
+  background: #000000 !important;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.45) !important;
+}
+
+html[data-theme="light"] .logo,
+html[data-theme="light"] .logo span,
+html[data-theme="light"] .hero-caption h3,
+html[data-theme="light"] #resumeName {
+  color: #000000 !important;
+  font-weight: 800 !important;
+}
+
+/* High visibility for all text in light mode */
+html[data-theme="light"] .eyebrow {
+  color: #026aa7 !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.16em !important;
+}
+
+html[data-theme="light"] .subheading {
+  color: #0f172a !important;
+  font-weight: 600 !important;
+  font-size: 1.05rem !important;
+}
+
+html[data-theme="light"] .section-title h2 {
+  background: none !important;
+  background-image: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  -webkit-text-fill-color: #000000 !important;
+  color: #000000 !important;
+  font-weight: 800 !important;
+}
+
+html[data-theme="light"] p,
+html[data-theme="light"] .project-desc,
+html[data-theme="light"] .service-card p {
+  color: #1e293b !important;
+  font-weight: 500 !important;
+}
+
+html[data-theme="light"] .site-nav a,
+html[data-theme="light"] .footer-links a {
+  color: #0f172a !important;
+  font-weight: 600 !important;
+}
+
+html[data-theme="light"] .site-nav a:hover,
+html[data-theme="light"] .site-nav a.active {
+  color: #000000 !important;
+  font-weight: 800 !important;
+}
+
+/* Card visibility */
+html[data-theme="light"] .avatar-card {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border: 1px solid rgba(56, 120, 199, 0.25) !important;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.1) !important;
+}
+
+html[data-theme="light"] .avatar-card .avatar-core {
+  background: #ffffff !important;
+  border: 1px solid rgba(56, 120, 199, 0.3) !important;
+}
+
+html[data-theme="light"] .avatar-card > p {
+  color: #0f172a !important;
+  font-weight: 600 !important;
+}
+
+html[data-theme="light"] .hero-caption p {
+  color: #334155 !important;
+  font-weight: 600 !important;
+}
+
+html[data-theme="light"] .btn-secondary {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.22) !important;
+  color: #000000 !important;
+  font-weight: 700 !important;
+  box-shadow: 0 3px 12px rgba(15, 23, 42, 0.08) !important;
+}
+
+html[data-theme="light"] .btn-secondary:hover {
+  background: #f8fafc !important;
+  border-color: #026aa7 !important;
+  color: #026aa7 !important;
+}
+
+html[data-theme="light"] .btn-primary {
+  background: linear-gradient(90deg, #6366f1, #0284c7) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.35) !important;
+}
+
+html[data-theme="light"] .stat-card {
+  background: rgba(255, 255, 255, 0.82) !important;
+  border: 1px solid rgba(15, 23, 42, 0.14) !important;
+}
+
+html[data-theme="light"] .stat-card h3 {
+  background: none !important;
+  -webkit-text-fill-color: #000000 !important;
+  color: #000000 !important;
+  font-weight: 800 !important;
+}
+
+html[data-theme="light"] .stat-card p {
+  color: #0f172a !important;
+  font-weight: 700 !important;
+}
+
+html[data-theme="light"] .about-card,
+html[data-theme="light"] .timeline,
+html[data-theme="light"] .skill-card,
+html[data-theme="light"] .service-card,
+html[data-theme="light"] .project-item,
+html[data-theme="light"] .contact-card-item,
+html[data-theme="light"] .contact-form-box {
+  background: rgba(255, 255, 255, 0.82) !important;
+  border: 1px solid rgba(15, 23, 42, 0.14) !important;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08) !important;
+}
+
+html[data-theme="light"] .about-card h3,
+html[data-theme="light"] .timeline h3,
+html[data-theme="light"] .skill-card h3,
+html[data-theme="light"] .service-card h3,
+html[data-theme="light"] .project-item h3 {
+  color: #000000 !important;
+  font-weight: 800 !important;
+}
+
+html[data-theme="light"] .skill-tag,
+html[data-theme="light"] .project-pill {
+  color: #050811 !important;
+  font-weight: 600 !important;
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.2) !important;
+}
+
+html[data-theme="light"] .filter-btn {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.2) !important;
+  color: #0f172a !important;
+  font-weight: 600 !important;
+}
+
+html[data-theme="light"] .filter-btn.active {
+  background: rgba(2, 106, 167, 0.15) !important;
+  border-color: #026aa7 !important;
+  color: #000000 !important;
+  font-weight: 800 !important;
+}
+
+html[data-theme="light"] .contact-label,
+html[data-theme="light"] .meta-label {
+  color: #026aa7 !important;
+  font-weight: 800 !important;
+}
+
+html[data-theme="light"] .contact-val,
+html[data-theme="light"] .meta-value {
+  color: #000000 !important;
+  font-weight: 700 !important;
+}
+
+html[data-theme="light"] .form-field label {
+  color: #050811 !important;
+  font-weight: 700 !important;
+}
+
+html[data-theme="light"] .form-input,
+html[data-theme="light"] .form-textarea {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.22) !important;
+  color: #050811 !important;
+  font-weight: 600 !important;
+}
+
+html[data-theme="light"] .timeline li {
+  color: #1e293b !important;
+  font-weight: 500 !important;
+}
+
+html[data-theme="light"] .timeline strong {
+  color: #000000 !important;
+  font-weight: 700 !important;
+}
+
+html[data-theme="light"] .timeline span.num {
+  background: rgba(2, 106, 167, 0.12) !important;
+  border-color: rgba(2, 106, 167, 0.3) !important;
+  color: #026aa7 !important;
+}
+
+html[data-theme="light"] .theme-toggle {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.22) !important;
+  color: #000000 !important;
+  font-weight: 700 !important;
+}
+
+html[data-theme="light"] .back-to-top {
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.2) !important;
+  color: #000000 !important;
+}
+
+html[data-theme="light"] .site-header {
+  background: rgba(255, 255, 255, 0.88) !important;
+  border-color: rgba(15, 23, 42, 0.12) !important;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08) !important;
+}
+
+html[data-theme="light"] .site-footer {
+  border-top-color: rgba(15, 23, 42, 0.12) !important;
+}
+
+html[data-theme="light"] .footer-copy {
+  color: #334155 !important;
+  font-weight: 600 !important;
 }

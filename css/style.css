@@ -959,10 +959,10 @@ h1 {
 .profile-frame img {
   display: block;
   width: 100%;
-  aspect-ratio: 1 / 1;
-  max-height: 420px;
+  height: auto;
+  aspect-ratio: 752 / 1004;
   object-fit: cover;
-  object-position: center top;
+  object-position: center center;
 }
 
 .profile-info {
@@ -2331,4 +2331,14 @@ html[data-theme="light"] .site-footer {
 html[data-theme="light"] .footer-copy {
   color: #334155 !important;
   font-weight: 600 !important;
+}
+
+html[data-theme="light"] .profile-frame {
+  border-color: rgba(15, 23, 42, 0.14) !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.1) !important;
+}
+
+html[data-theme="light"] .profile-frame::after {
+  border-color: rgba(15, 23, 42, 0.1) !important;
 }
